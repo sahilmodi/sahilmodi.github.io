@@ -64,19 +64,19 @@ footer.page-footer {
     height: 150px;
 }
 
-.background-color {
+.bgcolor {
     background-color: #e0e0e0;
 }
 
-.background-color-p {
+.bgcolor-p {
     background-color: #565bc1;
 }
 
-.background-color-text {
+.bgcolor-text {
     color: #e0e0e0;
 }
 
-.background-color-text-p {
+.bgcolor-text-p {
     color: #565bc1;
 }
 
