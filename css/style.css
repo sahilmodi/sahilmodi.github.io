@@ -63,3 +63,11 @@ footer.page-footer {
     width: 150px; 
     height: 150px;
 }
+
+.background-color {
+    background-color: #e0e0e0;
+}
+
+html {
+    font-family: Roboto, sans-serif;
+}
