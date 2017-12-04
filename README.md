@@ -1,2 +1,2 @@
 # sahilmodi.me
-My Website
+Personal Website
