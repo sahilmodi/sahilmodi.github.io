@@ -68,6 +68,18 @@ footer.page-footer {
     background-color: #e0e0e0;
 }
 
+.background-color-p {
+    background-color: #565bc1;
+}
+
+.background-color-text {
+    color: #e0e0e0;
+}
+
+.background-color-text-p {
+    color: #565bc1;
+}
+
 html {
     font-family: Roboto, sans-serif;
 }
