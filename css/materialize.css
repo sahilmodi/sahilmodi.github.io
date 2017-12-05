@@ -5201,7 +5201,9 @@ small {
 
 .btn:focus, .btn-large:focus,
 .btn-floating:focus {
-  
+    background-color: #565bc1;
+    color: #e0e0e0;
+    
 }
 
 .btn, .btn-large {
@@ -5215,9 +5217,11 @@ small {
   cursor: pointer;
 }
 
-.btn:hover, .btn-large:hover {
-  background-color: #565bc1;
-  color: #e0e0e0;
+@media (hover:hover) {
+    .btn:hover, .btn-large:hover {
+      background-color: #565bc1;
+      color: #e0e0e0;
+    }
 }
 
 .btn-floating {
