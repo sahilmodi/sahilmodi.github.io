@@ -11,6 +11,10 @@ nav .brand-logo {
   color: #444;
 }
 
+html {
+    font-family: Roboto, sans-serif;
+}
+
 p {
   line-height: 2rem;
 }
@@ -80,6 +84,10 @@ footer.page-footer {
     color: #565bc1;
 }
 
-html {
-    font-family: Roboto, sans-serif;
+.line-margin {
+    margin-bottom: 5px;
+}
+
+.icon-right {
+    margin-right: 5px;
 }
