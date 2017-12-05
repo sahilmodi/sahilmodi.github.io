@@ -3852,6 +3852,7 @@ nav ul a span.badge {
     margin-left: auto;
     left: auto;
     right: auto;
+    padding-right:
   }
   .row .col.l3 {
     width: 50%;
@@ -3860,7 +3861,7 @@ nav ul a span.badge {
     right: auto;
   }
   .row .col.l4 {
-    width: 33.3333333333%;
+    width: 15%;
     margin-left: auto;
     left: auto;
     right: auto;
