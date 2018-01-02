@@ -92,14 +92,18 @@ footer.page-footer {
     margin-right: 0.25em;
 }
 
+
+
+/*Material design cards 
 .card {
-  background: #fff;
+  background: #e0e0e0;
   border-radius: 2px;
   display: inline-block;
-  height: 300px;
-  margin: 1rem;
+  height: 400px;
+/*  margin: 1rem;*/
+/*  padding: 0.5rem;
   position: relative;
-  width: 300px;
+  width: 95%;
 }
 
 .card-1 {
@@ -126,3 +130,4 @@ footer.page-footer {
 .card-5 {
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
+/*End Material Design Cards*/
