@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+cp /mnt/c/Users/sm345/Google Drive/Personal Records/Resumes/Resume.pdf Resume.pdf
 git add .
 git commit -m "updated resume"
 git push
