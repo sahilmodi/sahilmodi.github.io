@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage{silence}
+\WarningsOff[everypage]%
+\usepackage{scimisc-cv}
+
+
+\title{Sahil Modi Resume}
+\author{Sahil Modi}
+\date{Aug 2020}
+
+%% These are custom commands defined in scimisc-cv.sty
+\cvname{Sahil Modi}
+\cvpersonalinfo{
+    \email{smodi9@illinois.edu}
+    \phone{847-890-3506}
+    \location{U.S. Citizen}
+    \homepage{sahilmodi.dev}
+    \linkedin{sahil-modi}
+    \github{sahilmodi}
+}
+
+\begin{document}
+
+%% QR Code
+\backgroundsetup{opacity=1, scale=1, angle=0, contents={%
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.north east)}]
+\node[anchor=north east,xshift=-1.1cm,yshift=-0.4cm]{\includegraphics[width=1.5cm]{qr_code.png}};
+\end{tikzpicture}}}
+\BgThispage
+
+% \maketitle %% This is LaTeX's default title constructed from \title,\author,\date
+
+\makecvtitle %% This is a custom command constructing the CV title from \cvname, \cvpersonalinfo
+
+\section{Education}
+\cvsubsection{M.S. Computer Science}[May 2022]
+[University of Illinois at Urbana-Champaign, Thesis Topic: Computer Vision \& Deep Learning][GPA: 4.00/4.00]
+\vspace{0.2cm}
+\cvsubsection{B.S. Computer Science, Minor in Statistics}[May 2021]
+[University of Illinois at Urbana-Champaign][GPA: 3.96/4.00]
+\begin{description}[widest=Coursework]
+    \item[Coursework]	Computational Photography, Computer Vision, Machine \& Deep Learning
+    \item[Awards]	\$5000 TechnipFMC \& \$3000 TBP Hayward Scholarships,  2\textsuperscript{nd} place at PygHacks, 2\textsuperscript{nd} place at Clorox competition
+\end{description}
+
+\section{Technical Skills}
+\begin{description}[widest=Frameworks]
+    \item[Languages]	Python, C++, C, Java, Javascript, Typescript, SQL, Bash
+    \item[Frameworks]	PyTorch, OpenCV, TensorFlow, Linux, Git
+\end{description}
+
+\section{Professional Experience}
+
+%% Another custom command provide by scimisc-cv.sty.
+%% First two arguments are typeset on the first line in bold; 3rd and 4th arguments are typeset on second line in italics. 2nd, 3rd and 4th arguments are OPTIONAL
+
+\cvsubsectionsingle{NVIDIA}[May 2021 -- Aug 2021]
+[Software Engineering Intern, TensorRT][Santa Clara, CA]
+
+\begin{itemize}
+    % \item Collaborated in a 6 person team to revise frontend asset generation
+    \item Introduced a software-based kernel timing heuristic (DLSim) for \textbf{neural network optimization}
+    \item Bridged \textbf{C++} TensorRT and \textbf{Python} DLSim by implementing a server-client interface handling 10s of queries/s with convolutional layer parameter translation
+    \item Compared 5 networks (\textbf{ResNet-50}, \textbf{MobileNet}, \textbf{Inception-V4}, etc), across 3 batch sizes and FP16, INT8 precision, meeting the <10\% throughout reduction goal
+\end{itemize}
+
+\cvsubsectionsingle{Amazon}[May 2020 -- Aug 2020]
+[Software Development Engineer Intern][Seattle, WA]
+
+\begin{itemize}
+    % \item Collaborated in a 6 person team to revise frontend asset generation
+    \item Reduced aggregate \textbf{Javascript} asset build time by 18.5\% and decreased memory usage by 11\%  
+    \item Analyzed code syntax trees for unfavorable behavior, decreasing final asset size by 5\%
+    \item Designed a variant generation algorithm an \textbf{order of magnitude faster} for server built variants and client responsive variants 
+\end{itemize}
+
+%% An example of leaving an argument empty
+\cvsubsection{Distributed Autonomous Systems Laboratory}[Jan 2020 -- May 2020]
+[Undergraduate Research Assistant | Advisors: Dr. Girish Chowdhary, Dr. Saurabh Gupta][Urbana, IL]
+\begin{itemize}
+    \item Investigated vision-based robot heading estimation with a \textbf{self-supervised network} on \textbf{PyTorch} achieving 2 degrees error 
+    \item Devised a \textbf{supervised network} for autonomously calculate pose and drive a robot with distance to intervention of 30 meters
+    \item Augmented video data with \textbf{homographic transformations} to simulate robot variance and increase dataset coverage
+\end{itemize}
+
+\cvsubsectionsingle{EarthSense}[Sep 2019 -- Dec 2019]
+[Computer Vision Research Intern | Advisor: Dr. Girsh Chowdhary][Champaign, IL]
+\begin{itemize}
+    \item Ascertained intrinsic camera matrices of Terrasentia robot cameras
+    \item Achieved 92\% accuracy for corn ear height estimation from video by fusing a \textbf{neural network} with \textbf{single view metrology}
+\end{itemize}
+
+\cvsubsectionsingle{Northrop Grumman}[May 2019 -- Aug 2019]
+[Software Engineering Intern][Rolling Meadows, IL]
+\begin{itemize}
+    \item Developed a C\# application to configure and test missile warning algorithms
+    and pulled in project schedule by 2 months 
+\end{itemize}
+
+\cvsubsectionsingle{EarthSense}[Sep 2018 -- May 2019]
+[Computer Vision Intern][Champaign, IL]
+\begin{itemize}
+    \item Trained a \textbf{convolutional neural network} with \textbf{TensorFlow} on a biased dataset to classify lodging of wheat with 80\% accuracy
+    \item Deployed a \textbf{TensorFlow ML} model to detect and count plant stems with 96\% accuracy
+% \item Proposed additional data collection metrics to address overfitting
+\end{itemize}
+
+\cvsubsectionsingle{Swarm Robotix}[May 2018 -- Aug 2018]
+[Software Engineering Intern][Naperville, IL]
+\begin{itemize}
+    \item Collaborated with 2 people to create vision algorithms with \textbf{OpenCV} to detect shipping container corner castings
+\end{itemize}
+
+\section{Project Highlights}
+\cvproject{HackIllinois Stock Analysis}
+\begin{itemize}
+    \item A python package discovering sentiment about a company from its tweets using NLTK and correlating it with stock price
+    \item \textbf{Linear, ridge regression}, and a \textbf{convolutional neural network} are used for prediction and compared against each other
+\end{itemize}
+ \cvproject{CU-Recycle}
+\begin{itemize}
+    \item Devised an Android application to report an item's recyclability status in the Urbana-Champaign area, \textbf{winning 2\textsuperscript{nd}} at PygHacks 
+    \item Trained a convolutional neural network for \textbf{object recognition} with \textbf{Keras} to overcome lighting and object variance
+\end{itemize}
+
+\section{Leadership}
+\cvleadership{CS 461: Computer Security}[Course Assistant][Jan 2021 -- May 2021]
+% \begin{itemize}
+%     \item Held office hours to answer student questions about course material
+% \end{itemize}
+\cvleadership{CS 374: Algorithms}[Course Assistant][Aug 2020 -- Dec 2020]
+% \begin{itemize}
+%     \item Assisted graduate TAs with office hours and graded student homework
+% \end{itemize}
+\cvleadership{DGS Student Council}[Class Representative][Aug 2019 -- May 2021]
+% \begin{itemize}
+%     \item Providing advice to Division of General Studies director on pre-engineering events and information
+%     % \item Serving on engineering student panel for prospective and incoming students 
+% \end{itemize}
+\cvleadership{Engineering Freshmen Council}[IT Chair][Aug 2017 -- May 2018]
+% \begin{itemize}
+%     \item Redesigned Engineering Freshmen Council website
+% \end{itemize}
+% \cvleadership{iRobotics MRDC}[Software Lead][2017 -- 2018]
+% \begin{itemize}
+%     \item Managed a team of 3 to design and develop the robot's software stack
+% \end{itemize}
+
+\section{Publications}
+\cvleadership{Learned Visual Navigation for Under-Canopy Agricultural Robots}[Robotics: Science and Systems][2021]
+Arun Sivakumar, \textbf{Sahil Modi}, Mateus Gasparino, Che Ellis, Andres Velasquez, Girish Chowdhary, Saurabh Gupta
+
+\end{document}

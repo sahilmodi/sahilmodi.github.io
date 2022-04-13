@@ -1,0 +1,120 @@
+% Quickly hacked together from .docx sample provided by Scimisc
+\RequirePackage{ifpdf,ifxetex,ifluatex}
+\ifpdf
+  \RequirePackage{cmap}
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage[T1]{fontenc}
+  \input{glyphtounicode}
+  \pdfglyphtounicode{f_f}{FB00}
+  \pdfglyphtounicode{f_f_i}{FB03}
+  \pdfglyphtounicode{f_f_l}{FB04}
+  \pdfglyphtounicode{f_i}{FB01}
+  \pdfgentounicode=1
+\fi
+
+\RequirePackage{caladea}
+\RequirePackage{carlito}
+\renewcommand{\familydefault}{\sfdefault}
+
+\RequirePackage{geometry}
+\RequirePackage{parskip}
+\RequirePackage{enumitem}
+\RequirePackage{textcase}
+\RequirePackage{xparse}
+\RequirePackage{needspace}
+\RequirePackage[compact,small,explicit]{titlesec}
+
+%% Added packages
+\RequirePackage{fontawesome}
+\usepackage{tikz, background}
+
+\def\scimisc@cvname{}
+\def\scimisc@cvpersonalinfo{}
+\def\cvinfosep{\hfill|\hfill{}}
+
+%% colors
+\definecolor{skyblue}{HTML}{0395DE}
+\colorlet{accent}{skyblue}
+
+%% fonts
+% \usepackage{roboto}
+\usepackage{libertine}
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+
+%% personal info icons
+\newcommand{\emailsymbol}{\large\faEnvelope}
+\newcommand{\locationsymbol}{\large\faMapMarker}
+\newcommand{\phonesymbol}{\large\faPhone}
+\newcommand{\homepagesymbol}{\large\faDesktop}
+\newcommand{\linkedinsymbol}{\large\faLinkedin}
+\newcommand{\githubsymbol}{\large\faGithub}
+
+%% personal info commands
+\usepackage{xcolor}
+\usepackage{hyperref}
+\newcommand{\printinfolink}[3]{\mbox{\color{black}{\normalfont #1}\hspace{0.5em} \href{#3}{#2}\hspace{1em}|\hspace{1em}}}
+\newcommand{\printinfolinklast}[3]{\mbox{\color{black}{\normalfont #1}\hspace{0.5em} \href{#3}{#2}\hspace{2em}}}
+
+\newcommand{\email}[1]{\printinfolink{\emailsymbol}{#1}{mailto:#1}}
+\newcommand{\location}[1]{\printinfolink{\locationsymbol}{#1}{}}
+\newcommand{\phone}[1]{\printinfolink{\phonesymbol}{#1}{tel:#1}}
+\newcommand{\homepage}[1]{\printinfolink{\homepagesymbol}{#1}{http://#1}}
+\newcommand{\linkedin}[1]{\printinfolink{\linkedinsymbol}{#1}{https://linkedin.com/in/#1}}
+\newcommand{\github}[1]{\printinfolinklast{\githubsymbol}{#1}{https://github.com/#1}}
+
+\newcommand{\cvname}[1]{\def\scimisc@cvname{#1}}
+\newcommand{\cvpersonalinfo}[1]{\def\scimisc@cvpersonalinfo{#1}}
+
+\newcommand{\cvnamefont}{\Huge\bfseries\color{accent}}
+\newcommand{\cvpersonalinfofont}{\footnotesize}
+
+\newcommand{\makecvtitle}{%
+  \begin{center}
+      {\cvnamefont\MakeTextUppercase{\scimisc@cvname}\par}
+      \vskip4pt \relax
+      {\cvpersonalinfofont\scimisc@cvpersonalinfo\par}
+  \end{center}\medskip
+}
+
+\NewDocumentCommand{\cvsubsection}{m o o o}{%
+  \needspace{4\baselineskip}%
+  \textbf{\large#1}%
+  \IfValueT{#2}{\hfill\textbf{#2}}%
+  \IfValueT{#3}{\IfValueT{#4}{\\}}%
+  \IfValueT{#3}{\emph{#3}}%
+  \IfValueT{#4}{\hfill\emph{#4}}
+  \par\vspace{-\parskip}
+}
+
+\NewDocumentCommand{\cvsubsectionsingle}{m o o o}{%
+  \needspace{4\baselineskip}%
+  \textbf{\large#1} | \IfValueT{#3}{\emph{#3}} %
+  \IfValueT{#2}{\hfill\IfValueT{#4}{\emph{#4}} | \textbf{#2}}%
+%   \IfValueT{#3}{}%
+%   \IfValueT{#4}{\hfill}
+  \par\vspace{-\parskip}
+}
+
+\NewDocumentCommand{\cvproject}{m}{%
+  \needspace{4\baselineskip}%
+  \textbf{\large#1}%
+  \par\vspace{-\parskip}
+}
+
+\NewDocumentCommand{\cvleadership}{m o o}{%
+  \needspace{4\baselineskip}%
+  \textbf{#1}%
+  \IfValueT{#2}{ | \textit{#2}}
+  \IfValueT{#3}{\hfill\textbf{#3}}%
+  \par\vspace{-\parskip}
+}
+
+\geometry{a4paper, left=0.5in, right=0.5in, top=0.35in, bottom=0in}
+\titleformat{\section}
+  {\bfseries\Large\color{accent}}{\thesection}{0pt}{\MakeTextUppercase{#1}}
+  [{\color{black}\titlerule[0.6pt]}]
+\setlist{leftmargin=*,nosep}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
